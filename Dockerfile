@@ -15,3 +15,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) gd
 
 VOLUME /var/www/html
+
+WORKDIR /usr/local/etc/php/conf.d
+
+COPY php.ini ./php.ini
